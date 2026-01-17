@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { HearingAidsComponent } from '../products/hearing-aids/hearing-aids.component';
 import { HearingaidService } from '../hearingService/hearingaid.service';
+import { StripHtmlPipe } from './strip-html.pipe';
+import { SafeHtmlPipe } from './safe-html.pipe';
 import { Meta, Title } from '@angular/platform-browser';
 import { environment } from '../../../environments/environment';
 import { ServiceService } from '../../services/service.service';
@@ -10,7 +12,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, StripHtmlPipe, SafeHtmlPipe],
   templateUrl: './services.component.html',
   styleUrl: './services.component.css',
 })
@@ -132,11 +134,16 @@ export class ServicesComponent {
       .replace(/^-+/, '') // trim dashes from start
       .replace(/-+$/, ''); // trim dashes from end
   }
-
-  // Keep your existing toggleReadMore method EXACTLY as it is
+ 
+  // If collapsed: navigate to details page. If expanded: collapse inline.
   toggleReadMore(card: any): void {
-    console.log(card);
-    this.router.navigate(['/service-details', card.slug], { state: { card } });
+    if (!card.showMore) {
+      // Navigate to details page when clicking 'Read More'
+      this.router.navigate(['/service-details', card.slug], { state: { card } });
+    } else {
+      // When already expanded, 'Read Less' collapses the card
+      card.showMore = false;
+    }
   }
 
   // If you want to add subsections dynamically from API data, use this method

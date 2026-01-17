@@ -11,3 +11,22 @@
 .btn-custom:hover {
   background-color: #c70039;
 }
+
+/* Collapsed preview styles for HTML content */
+.service-content {
+  transition: max-height 0.3s ease;
+}
+.service-content.collapsed {
+  max-height: 6rem; /* adjust to desired preview height */
+  overflow: hidden;
+  position: relative;
+}
+.service-content.collapsed::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2.4rem;
+  background: linear-gradient(rgba(255,255,255,0), var(--ActiveBase));
+}

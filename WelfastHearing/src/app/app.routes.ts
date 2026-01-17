@@ -33,11 +33,11 @@ export const routes: Routes = [
   // NEW: Individual blog post routes
 
   { path: 'blog', component: BlogsComponent },
-  {
-    path: 'blog/:slug',
-    component: BlogDetailComponent,
+  //{
+    //path: 'blog/:slug',
+    //component: BlogDetailComponent,
     // This will handle URLs like: /blog/best-hearing-aids-2024
-  },
+  //},
   {
     path: 'Admin-login',
     component: AdminLoginComponent,
@@ -79,9 +79,15 @@ export const routes: Routes = [
     data: { type: 'service' }
   },
   // Optional: Redirect old blog URLs to new format
+  //{
+    //path: 'blogs/:slug',
+    //redirectTo: 'blog/:slug',
+    //pathMatch: 'full'
+  //},
+    /* 🔥 BLOG DETAIL WITHOUT /blog */
   {
-    path: 'blogs/:slug',
-    redirectTo: 'blog/:slug',
+    path: ':slug',
+    component: BlogDetailComponent,
     pathMatch: 'full'
   },
   // Catch-all route (should be last)

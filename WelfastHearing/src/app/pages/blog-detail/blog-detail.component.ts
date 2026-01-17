@@ -167,7 +167,7 @@ blog: any = null;
   }
 
   goBackToBlogs(): void {
-    this.router.navigate(['/Blogs']);
+    this.router.navigate(['/blog']);
   }
 
   shareBlog(): void {

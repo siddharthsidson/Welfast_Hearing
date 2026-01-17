@@ -134,7 +134,7 @@ export class BlogsComponent implements OnInit, OnDestroy {
     this.trackBlogView(blog.id);
 
     // Navigate to the individual blog post page
-    this.router.navigate(['/blog', blog.slug]);
+    this.router.navigate(['/', blog.slug]);
   }
 
   // REMOVED: All modal-related methods

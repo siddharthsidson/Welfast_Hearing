@@ -13,23 +13,23 @@ import { Router } from '@angular/router';
 export class FAQComponent {
 
   constructor(private router: Router, private meta: Meta, private title: Title) {
-    this.title.setTitle('WelfastHearingFAQ–MicrSctionEarWaxRemoval, Hearing Tests & Hearing Aids');
+    this.title.setTitle('Welfast Hearing FAQ – Micro Suction Ear Wax Removal, Hearing Tests & Hearing Aids');
 
     // Set meta description
     this.meta.updateTag({
       name: 'description',
-      content: 'Findanswerstocommonquestionsonmirouctionearwaxreval, hearing tests, andvancedhearingaids. learn more about rechargeablehearingaids and Bluetoothhearingaid options at WelfastHearing, Central Coast.'
+      content: 'Find answers to common questions on microsuction ear wax removal, hearing tests, advanced hearing aids. Learn more about rechargeable hearing aids and Bluetooth hearing aid options at WelfastHearing, Central Coast.'
     });
 
     // Set keywords
     this.meta.updateTag({
       name: 'keywords',
-      content: 'MicrosuctionEarwaxremoval , HearingTest,HearingAids,Rechargeabl e hearing aids'
+      content: 'micro suction ear wax removal, hearing test, hearing aids, rechargeable hearing aids'
     });
 
     // Set Open Graph tags
-    this.meta.updateTag({ property: 'og:title', content: 'WelfastHearing FAQ–MicrSctionEarWaxRemoval, Hearing Tests & Hearing Aids' });
-    this.meta.updateTag({ property: 'og:description', content: 'Findanswerstocommonquestionsonmirouctionearwaxreval, hearing tests, andvancedhearingaids. learn more about rechargeablehearingaids and Bluetoothhearingaid options at WelfastHearing, Central Coast.' });
+    this.meta.updateTag({ property: 'og:title', content: 'Welfast Hearing FAQ – Micro Suction Ear Wax Removal, Hearing Tests & Hearing Aids' });
+    this.meta.updateTag({ property: 'og:description', content: 'Find answers to common questions on micro suction ear wax removal, hearing tests, andvanced hearing aids. Learn more about rechargeable hearing aids and Bluetooth hearing aid options at WelfastHearing, Central Coast.' });
     this.meta.updateTag({ property: 'og:image', content: '	https://welfasthearing.com.au/assets/Banner-images/5.png' });
     this.meta.updateTag({ property: 'og:url', content: 'https://welfasthearing.com.au/' });
 

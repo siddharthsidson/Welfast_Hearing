@@ -1,11 +1,11 @@
-.carousel-caption{
+.carousel-caption {
   top: 60%;
   transform: translateY(-50%);
 }
-.carousel-item{
+.carousel-item {
   height: 90vh;
 }
-.image-section{
+.image-section {
   border-radius: 50%;
   width: 450px; /* Adjust based on your design */
   height: 450px; /* Make it a square */
@@ -15,26 +15,26 @@
   align-items: center;
   margin-top: 30px;
 }
-.button{
+.button {
   margin-top: 20px;
 }
-@media(max-width:768px){
+@media (max-width: 768px) {
   .carousel-caption {
     top: 50%;
     transform: translateY(-50%);
   }
-  .button{
+  .button {
     margin-top: 30px;
   }
   .carousel-item {
     height: 60vh;
     object-fit: cover;
   }
-  .carousel-item img{
+  .carousel-item img {
     height: 60vh;
     object-fit: cover;
   }
-  .image-section{
+  .image-section {
     border-radius: 50%;
     width: 370px; /* Adjust based on your design */
     height: 370px; /* Make it a square */
@@ -45,6 +45,18 @@
     margin-top: 30px;
   }
 }
+
+/* CSS imac */
+@media only screen and (min-width: 1920px) {
+  .carousel-item {
+    height: 95vh;
+  }
+  .carousel-item img {
+    height: 95vh;
+    object-fit: cover;
+  }
+}
+
 /* /zoom/ */
 @-webkit-keyframes zoom {
   from {
@@ -68,8 +80,6 @@
   -webkit-animation: zoom 20s;
   animation: zoom 20s;
 }
-
-
 
 .services-section {
   background-color: #f7941d; /* Orange background */
@@ -107,7 +117,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 .cont {
   /* max-width: 400px; */
@@ -121,8 +130,6 @@
     max-width: 100%;
     padding: 0 20px;
   }
-
-
 }
 .card {
   display: flex;
@@ -184,4 +191,3 @@
 .btn-read-more:hover {
   background-color: darkred;
 }
-
