@@ -7,7 +7,8 @@
 :host {
   display: block;
   min-height: 100vh;
-  background: var(--primary-gradient);
+  /* background: var(--primary-gradient); */
+  background: var(--ActiveBase);
   padding: var(--spacing-lg) 0;
   font-family: var(--font-family);
 }
@@ -16,12 +17,13 @@
    MAIN CONTAINER
 ======================================== */
 .blog-container {
-  background: rgba(255, 255, 255, 0.95);
+  /* background: rgba(255, 255, 255, 0.95); */
+  background: var(--ActiveBase);
   backdrop-filter: blur(10px);
-  border-radius: var(--radius-xl);
+  /* border-radius: var(--radius-xl); */
   margin: var(--spacing-lg) auto;
   padding: var(--spacing-3xl);
-  box-shadow: var(--shadow-xl);
+  /* box-shadow: var(--shadow-xl); */
   max-width: 1400px;
   position: relative;
   font-family: var(--font-family);
@@ -44,14 +46,16 @@
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: var(--primary-gradient);
+  /* background: var(--primary-gradient); */
+  background: var(--white);
   border-radius: 2px;
 }
 
 .blog-title {
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: var(--font-weight-extrabold);
-  background: var(--primary-gradient);
+  /* background: var(--primary-gradient); */
+  background: var(--white);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -62,7 +66,7 @@
 
 .blog-subtitle {
   font-size: 1.2rem;
-  color: var(--text-muted);
+  color: var(--border-color);
   font-weight: var(--font-weight-normal);
 }
 
@@ -300,7 +304,8 @@
   width: 32px;
   height: 32px;
   border-radius: var(--radius-full);
-  background: var(--primary-gradient);
+  /* background: var(--primary-gradient); */
+  background: var(--BaseColor);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -311,7 +316,8 @@
 }
 
 .read-more-btn {
-  background: var(--primary-gradient);
+  /* background: var(--primary-gradient); */
+  background: var(--BaseColor);
   border: none;
   color: var(--background-white);
   padding: 12px 24px;
@@ -330,7 +336,8 @@
 .read-more-btn:hover {
   transform: translateX(5px);
   box-shadow: var(--shadow-brand);
-  color: var(--background-white);
+  /* color: var(--background-white); */
+  background-color: #c70039;
 }
 
 .read-more-btn:focus {

@@ -93,7 +93,7 @@ export class AdminDashboardComponent {
 
   // Edit item - populates form with existing data
   editItem(item: any): void {
-    console.log('Editing item:', item);
+    //console.log('Editing item:', item);
 
     this.isEditMode = true;
     this.editingItem = item;
@@ -339,7 +339,7 @@ export class AdminDashboardComponent {
     submitCall.subscribe(
       (res: any) => {
         this.loading = false;
-        console.log(`${this.isEditMode ? 'Update' : 'Upload'} response:`, res);
+        //console.log(`${this.isEditMode ? 'Update' : 'Upload'} response:`, res);
 
         if (res.success || res.status) {
           this.message = this.isEditMode ? '✅ Updated successfully!' : '✅ Upload successful!';
@@ -358,7 +358,7 @@ export class AdminDashboardComponent {
   }
 
   deleteimg(data: any) {
-    console.log('Delete data:', data);
+    //console.log('Delete data:', data);
     if (!confirm('Are you sure you want to delete this item?')) return;
 
     const formData = data.id;
@@ -404,11 +404,11 @@ export class AdminDashboardComponent {
     dataCall.subscribe(
       (res: any) => {
         this.loading = false;
-        console.log('Get data response:', res);
+        //console.log('Get data response:', res);
 
         if (res.success && res.data) {
           this.imagedata = res.data;
-          console.log(this.imagedata);
+          //console.log(this.imagedata);
 
           this.mappeddata = this.imagedata.map(item => ({
             id: item.id,
@@ -421,7 +421,7 @@ export class AdminDashboardComponent {
             metaDescription: item.meta_desc || item.meta_description || ''
           }));
 
-          console.log('Mapped data:', this.mappeddata);
+          //console.log('Mapped data:', this.mappeddata);
         }
       },
       (error: any) => {

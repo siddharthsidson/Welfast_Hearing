@@ -78,6 +78,6 @@ export class AboutUsComponent {
 
   onBookAppointment(): void {
     // Handle appointment booking logic here
-    console.log('Book appointment clicked');
+    //console.log('Book appointment clicked');
   }
 }

@@ -41,11 +41,11 @@ export class DetailedPageComponent implements OnInit {
     // Try to get card data from navigation state first
     const nav = this.router.getCurrentNavigation();
     const stateCard = history.state?.card;
-    console.log('Card from state:', stateCard);
+    //console.log('Card from state:', stateCard);
 
     if (stateCard) {
       this.setPageData(stateCard);
-      console.log('Loaded card from navigation state:', stateCard);
+      //console.log('Loaded card from navigation state:', stateCard);
     } else {
       // Fallback: user opened URL directly — get slug from route
       const slug = this.route.snapshot.paramMap.get('slug');

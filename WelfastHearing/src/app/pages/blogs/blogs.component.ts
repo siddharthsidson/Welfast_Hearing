@@ -100,7 +100,7 @@ export class BlogsComponent implements OnInit, OnDestroy {
       created_at: item.created_at || item.date
     }));
 
-    console.log('Mapped blog data with slugs:', this.mappeddata);
+    //console.log('Mapped blog data with slugs:', this.mappeddata);
   }
 
   // ADDED: Create URL-friendly slug
@@ -182,7 +182,7 @@ export class BlogsComponent implements OnInit, OnDestroy {
 
   // Track blog views for analytics
   trackBlogView(blogId: string): void {
-    console.log(`Blog ${blogId} viewed`);
+    //console.log(`Blog ${blogId} viewed`);
     // You can add Google Analytics or other tracking here
   }
 
@@ -197,7 +197,7 @@ export class BlogsComponent implements OnInit, OnDestroy {
         navigator.share({ title, text: description, url });
       } else if (navigator.clipboard) {
         navigator.clipboard.writeText(url);
-        console.log('URL copied to clipboard');
+        //console.log('URL copied to clipboard');
       }
     }
   }

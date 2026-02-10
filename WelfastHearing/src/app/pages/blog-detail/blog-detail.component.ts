@@ -159,7 +159,7 @@ blog: any = null;
     this.meta.updateTag({ name: 'twitter:description', content: description });
     this.meta.updateTag({ name: 'twitter:image', content: imageUrl });
 
-    console.log('Meta tags updated for blog:', { title, description, keywords });
+    //console.log('Meta tags updated for blog:', { title, description, keywords });
   }
 
   onImageError(event: any): void {
@@ -209,7 +209,7 @@ blog: any = null;
   copyLink(): void {
     if (isPlatformBrowser(this.platformId) && navigator.clipboard) {
       navigator.clipboard.writeText(window.location.href).then(() => {
-        console.log('Link copied to clipboard');
+        //console.log('Link copied to clipboard');
         // You could add a toast notification here
       });
     }
