@@ -40,11 +40,11 @@ export class ProductDetailComponent {
 
   private loadProductData(): void {
     const stateCard = history.state?.card;
-    console.log('Card from state:', stateCard);
+    //console.log('Card from state:', stateCard);
 
     if (stateCard) {
       this.setPageData(stateCard);
-      console.log('Loaded card from navigation state:', stateCard);
+      //console.log('Loaded card from navigation state:', stateCard);
     } else {
       const slug = this.route.snapshot.paramMap.get('slug');
       if (!slug) {
@@ -114,7 +114,7 @@ export class ProductDetailComponent {
 
   onCallNow(): void {
     this.isCalling = true;
-    console.log(`Customer wants to purchase: ${this.product.name}`);
+    //console.log(`Customer wants to purchase: ${this.product.name}`);
 
     setTimeout(() => {
       window.open('tel:+15551234567');

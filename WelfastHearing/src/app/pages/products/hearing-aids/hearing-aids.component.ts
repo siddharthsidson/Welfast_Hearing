@@ -114,7 +114,7 @@ export class HearingAidsComponent {
     this.serviceService.get_Products().subscribe({
       next: (response) => {
         this.loading = false;
-        console.log('Products API Response:', response); // Debug log
+        //console.log('Products API Response:', response); // Debug log
 
         if (response.success && response.data) {
           // Process all products from API
@@ -127,7 +127,7 @@ export class HearingAidsComponent {
             type: apiProduct.type, // Keep the type for filtering
             slug: this.toSeoFriendly(apiProduct.heading),
           }));
-          console.log('All Products:', allProducts); // Debug log
+          //console.log('All Products:', allProducts); // Debug log
           // Filter products by type into separate arrays
           this.hearingAidsList = allProducts.filter(
             (product: any) => product.type === 'hearing-a'
@@ -141,9 +141,9 @@ export class HearingAidsComponent {
             (product: any) => product.type === 'hearing-c'
           );
 
-          console.log('Hearing Aids:', this.hearingAidsList);
-          console.log('Accessories:', this.hearingAidAccessoriesList);
-          console.log('Assistive Devices:', this.assistiveListeningDevicesList);
+          //console.log('Hearing Aids:', this.hearingAidsList);
+          //console.log('Accessories:', this.hearingAidAccessoriesList);
+          //console.log('Assistive Devices:', this.assistiveListeningDevicesList);
         } else {
           console.error('API response not successful:', response);
           this.setFallbackData(); // Optional: Set empty or fallback data
