@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -72,31 +72,62 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "MedicalBusiness",
+        "@type": "MedicalClinic",
+        "@id": "https://welfasthearing.com.au/#medicalclinic",
         "name": "Welfast Hearing",
-        "description": "Expert hearing tests and hearing aids in Central Coast",
+        "url": "https://welfasthearing.com.au/",
+        "image": "https://welfasthearing.com.au/assets/Welfast%20Hearing%20Branding%20Kit-08.png",
+        "logo": "https://welfasthearing.com.au/assets/Welfast%20Hearing%20Branding%20Kit-08.png",
+        "telephone": "+61 2 4311 5511",
+        "priceRange": "$$",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Central Coast",
+          "streetAddress": "89 Dora St",
+          "addressLocality": "Morisset",
           "addressRegion": "NSW",
+          "postalCode": "2264",
           "addressCountry": "AU"
         },
-        "telephone": "0243115511",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -33.1089,
+          "longitude": 151.4874
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "08:30",
+            "closes": "17:00"
+          }
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": "58"
+        },
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
+          "name": "Hearing Services",
           "itemListElement": [
             {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "MedicalProcedure",
-                "name": "Hearing Tests Central Coast"
+                "name": "Hearing Tests in Central Coast"
               }
             },
             {
               "@type": "Offer",
               "itemOffered": {
-                "@type": "Product",
-                "name": "Rechargeable Hearing Aids"
+                "@type": "Service",
+                "name": "Hearing Aid Fitting & Support"
               }
             }
           ]

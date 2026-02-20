@@ -86,7 +86,7 @@ export class ServicesComponent {
     this.servicesService.get_services().subscribe({
       next: (response: any) => {
         this.loading = false;
-        console.log('API Response:', response); // Debug log
+        //console.log('API Response:', response); // Debug log
 
         if (response.success && response.data) {
           // Map API data to your existing structure
@@ -110,7 +110,7 @@ export class ServicesComponent {
               // }
             ],
           }));
-          console.log('Mapped Services:', this.services); // Debug log
+          //console.log('Mapped Services:', this.services); // Debug log
         } else {
           console.error('API response not successful:', response);
         }
