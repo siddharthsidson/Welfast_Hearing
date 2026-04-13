@@ -93,7 +93,7 @@ export class DetailedPageComponent implements OnInit {
   }
 
   bookConsultation(): void {
-    this.router.navigate(['/contact-us']);
+    this.router.navigate(['/Contact-us']);
   }
 
   callNow(): void {

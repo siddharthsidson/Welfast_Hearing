@@ -38,7 +38,7 @@
       <span><i class="bi bi-folder"></i> Article</span>
     </div>
 
-    <!-- <h1 class="blog-title">{{ getBlogTitle(blog) }}</h1> -->
+    <h1 class="blog-title">{{ getBlogTitle(blog) }}</h1>
 
     <!-- Meta Description Display -->
     <div *ngIf="blog.metaDescription" class="blog-summary">
@@ -46,14 +46,14 @@
     </div>
 
     <!-- Keywords -->
-    <div *ngIf="blog.metaKeyword" class="blog-keywords">
+    <!-- <div *ngIf="blog.metaKeyword" class="blog-keywords">
       <span
         *ngFor="let keyword of getKeywordTags(blog.metaKeyword)"
         class="keyword-tag"
       >
         {{ keyword }}
       </span>
-    </div>
+    </div> -->
   </header>
 
   <!-- Featured Image -->

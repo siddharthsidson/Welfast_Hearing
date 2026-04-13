@@ -379,8 +379,13 @@ You can use the buttons above to add formatting or type HTML directly for more c
     <p class="mb-0">📭 No data found. Start by uploading your first {{ activeTab.replace('Upload ', '').toLowerCase() }}!</p>
   </div>
 
-  <!-- Logout -->
-  <div class="text-center mt-4">
-    <button class="btn btn-secondary" (click)="logout()">🚪 Logout</button>
+  <!--Update XML & Logout -->
+  <div class="text-center mt-4 d-flex justify-content-center">
+    <div class="me-2">
+      <a href="https://welfasthearing.com.au/adminpanel/sitemap" target="_blank" class="btn btn-primary">🔄 Update Sitemap XML</a>
+    </div>
+    <div>
+      <button class="btn btn-secondary" (click)="logout()">🚪 Logout</button>
+    </div>
   </div>
 </div>
