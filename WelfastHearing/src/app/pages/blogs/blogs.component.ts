@@ -117,7 +117,8 @@ export class BlogsComponent implements OnInit, OnDestroy {
 
   // Get blog title (meta title or fallback)
   getBlogTitle(blog: any): string {
-    return blog.title || blog.heading || 'Untitled Blog Post';
+    return blog.heading || blog.title || 'Untitled Blog Post';
+    //return blog.title || blog.heading || 'Untitled Blog Post';
   }
 
   // Get SEO description (meta description or fallback)

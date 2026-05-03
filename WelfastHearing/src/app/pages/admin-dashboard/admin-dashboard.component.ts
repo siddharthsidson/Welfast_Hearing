@@ -345,6 +345,7 @@ export class AdminDashboardComponent {
           this.message = this.isEditMode ? '✅ Updated successfully!' : '✅ Upload successful!';
           this.resetForm();
           this.getDataByTab();
+          window.open('https://welfasthearing.com.au/adminpanel/sitemap', '_blank');
         } else {
           this.message = `❌ ${this.isEditMode ? 'Update' : 'Upload'} failed: ` + (res.message || 'Unknown error');
         }
@@ -374,6 +375,7 @@ export class AdminDashboardComponent {
         this.loading = false;
         if (res.success || res.status) {
           this.message = '✅ Deleted successfully!';
+          window.open('https://welfasthearing.com.au/adminpanel/sitemap', '_blank');
 
           // If we were editing the deleted item, exit edit mode
           if (this.isEditMode && this.editingItem?.id === data.id) {
