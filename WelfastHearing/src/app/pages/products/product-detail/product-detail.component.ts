@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SafeHtmlPipe } from '../../services/safe-html.pipe';
 
 @Component({
   selector: 'app-product-detail',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,SafeHtmlPipe],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.css',
 })

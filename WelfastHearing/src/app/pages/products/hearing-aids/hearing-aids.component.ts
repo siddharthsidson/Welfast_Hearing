@@ -4,11 +4,12 @@ import { Meta, Title } from '@angular/platform-browser';
 import { ServiceService } from '../../../services/service.service';
 import { environment } from '../../../../environments/environment';
 import { Router } from '@angular/router';
+import { SafeHtmlPipe } from '../../services/safe-html.pipe';
 
 @Component({
   selector: 'app-hearing-aids',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,SafeHtmlPipe],
   templateUrl: './hearing-aids.component.html',
   styleUrl: './hearing-aids.component.css',
 })
