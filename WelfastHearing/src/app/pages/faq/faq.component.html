@@ -4,7 +4,9 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <h2 class="section-title text-center mb-5">Frequently Asked Questions</h2>
+          <h1 class="section-title text-center mb-5">
+            Frequently Asked Questions
+          </h1>
         </div>
       </div>
 
@@ -15,10 +17,13 @@
               class="faq-question"
               [class.active]="faq.isOpen"
               (click)="toggleFAQ(i)"
-              type="button">
-              {{ faq.question }}
-              <i class="fas fa-chevron-down faq-icon"
-                 [class.rotated]="faq.isOpen"></i>
+              type="button"
+            >
+              <h4>{{ faq.question }}</h4>
+              <i
+                class="fas fa-chevron-down faq-icon"
+                [class.rotated]="faq.isOpen"
+              ></i>
             </button>
             <div class="faq-answer" [class.active]="faq.isOpen">
               <p>{{ faq.answer }}</p>
