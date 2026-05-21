@@ -29,7 +29,7 @@ export class FAQComponent {
 
     // Set Open Graph tags
     this.meta.updateTag({ property: 'og:title', content: 'Welfast Hearing FAQ – Micro Suction Ear Wax Removal, Hearing Tests & Hearing Aids' });
-    this.meta.updateTag({ property: 'og:description', content: 'Find answers to common questions on micro suction ear wax removal, hearing tests, andvanced hearing aids. Learn more about rechargeable hearing aids and Bluetooth hearing aid options at WelfastHearing, Central Coast.' });
+    this.meta.updateTag({ property: 'og:description', content: 'Find answers to common questions on micro suction ear wax removal, hearing tests, advanced hearing aids. Learn more about rechargeable hearing aids and Bluetooth hearing aid options at WelfastHearing, Central Coast.' });
     this.meta.updateTag({ property: 'og:image', content: '	https://welfasthearing.com.au/assets/Banner-images/5.png' });
     this.meta.updateTag({ property: 'og:url', content: 'https://welfasthearing.com.au/' });
 

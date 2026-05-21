@@ -95,7 +95,7 @@ blog: any = null;
   }
 
   getBlogTitle(blog: any): string {
-    return blog.title || blog.heading || 'Blog Post';
+    return blog.heading || blog.title || 'Blog Post';
   }
 
   getKeywordTags(keywords: string): string[] {

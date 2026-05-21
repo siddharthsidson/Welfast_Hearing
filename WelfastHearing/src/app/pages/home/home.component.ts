@@ -97,7 +97,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   cards = [
     {
       id: 1,
-      title: 'Personalized Care',
+      title: 'Hearing test and advanced audiology care at Welfast Hearing with personalized hearing solutions in Central Coast and Lake Macquarie',
       slug: 'personalized-care',
       image: '../../../assets/homewhychoosewellfast/image_1.webp',
       fullContent:
@@ -106,7 +106,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     },
     {
       id: 2,
-      title: 'Informed Choices',
+      title: 'Person wearing audiometric headphones during a professional hearing test at Welfast Hearing, Central Coast and Lake Macquarie.',
       slug: 'informed-choices',
       image: '../../../assets/homewhychoosewellfast/image_2.webp',
       fullContent:
@@ -115,7 +115,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     },
     {
       id: 3,
-      title: 'Government Funding & Payment Plans',
+      title: 'Government funding and payment plans for hearing aids and hearing tests at Welfast Hearing.',
       slug: 'government-funding-and-payment-plans',
       image: '../../../assets/homewhychoosewellfast/image_3.webp',
       fullContent:
@@ -124,7 +124,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     },
     {
       id: 4,
-      title: 'Ongoing After Care',
+      title: 'Ongoing aftercare and audiology support at Welfast Hearing for long-term hearing health on the Central Coast and Lake Macquarie.',
       slug: 'ongoing-after-care',
       image: '../../../assets/homewhychoosewellfast/image_4.webp',
       fullContent:
@@ -133,7 +133,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     },
     {
       id: 5,
-      title: 'Hassle-Free Purchase',
+      title: 'Hassle-free hearing aid purchase at Welfast Hearing, Central Coast and Lake Macquarie.',
       slug: 'hassle-free-purchase',
       image: '../../../assets/homewhychoosewellfast/image_5.webp',
       fullContent:
