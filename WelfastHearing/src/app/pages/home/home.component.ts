@@ -5,8 +5,9 @@ import {
   AfterViewInit,
   ElementRef,
   ViewChild,
+  Inject,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { Meta, Title } from '@angular/platform-browser';
 
@@ -26,6 +27,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private router: Router,
     private meta: Meta,
     private title: Title,
+    @Inject(DOCUMENT) private doc: Document
   ) {
     // SEO meta settings
     this.title.setTitle(
@@ -80,13 +82,24 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   private setCanonicalUrl(url: string) {
-    let link: HTMLLinkElement =
-      document.querySelector("link[rel='canonical']") ||
-      document.createElement('link');
+    // let link: HTMLLinkElement =
+    //   document.querySelector("link[rel='canonical']") ||
+    //   document.createElement('link');
 
+    // link.setAttribute('rel', 'canonical');
+    // link.setAttribute('href', url);
+    // document.head.appendChild(link);
+    const existing = this.doc.querySelector("link[rel='canonical']") as HTMLLinkElement;
+
+    if (existing) {
+      existing.remove();
+    } 
+    // Create and append
+    const link = this.doc.createElement('link');
     link.setAttribute('rel', 'canonical');
     link.setAttribute('href', url);
-    document.head.appendChild(link);
+    this.doc.head.appendChild(link);
+  
   }
 
   contactus() {

@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { CommonModule, DOCUMENT } from '@angular/common';
+import { Component, Inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class FAQComponent {
 
-  constructor(private router: Router, private meta: Meta, private title: Title) {
+  constructor(private router: Router, private meta: Meta, private title: Title, @Inject(DOCUMENT) private doc: Document) {
     this.title.setTitle('Welfast Hearing FAQ – Micro Suction Ear Wax Removal, Hearing Tests & Hearing Aids');
 
     // Set meta description
@@ -34,14 +34,24 @@ export class FAQComponent {
     this.meta.updateTag({ property: 'og:url', content: 'https://welfasthearing.com.au/' });
 
     // Set canonical URL
-    this.setCanonicalUrl('https://welfasthearing.com.au/');
+    this.setCanonicalUrl('https://welfasthearing.com.au/FAQ');
   }
 
   private setCanonicalUrl(url: string) {
-    let link: HTMLLinkElement = document.querySelector("link[rel='canonical']") || document.createElement('link');
+    // let link: HTMLLinkElement = document.querySelector("link[rel='canonical']") || document.createElement('link');
+    // link.setAttribute('rel', 'canonical');
+    // link.setAttribute('href', url);
+    // document.head.appendChild(link);
+    const existing = this.doc.querySelector("link[rel='canonical']") as HTMLLinkElement;
+
+    if (existing) {
+      existing.remove();
+    } 
+    // Create and append
+    const link = this.doc.createElement('link');
     link.setAttribute('rel', 'canonical');
     link.setAttribute('href', url);
-    document.head.appendChild(link);
+    this.doc.head.appendChild(link);
   }
 
 

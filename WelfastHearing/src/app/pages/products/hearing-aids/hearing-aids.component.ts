@@ -65,12 +65,22 @@ export class HearingAidsComponent {
     this.setCanonicalUrl('https://welfasthearing.com.au/Hearing-aids');
   }
   private setCanonicalUrl(url: string) {
-    let link: HTMLLinkElement =
-      document.querySelector("link[rel='canonical']") ||
-      document.createElement('link');
+    // let link: HTMLLinkElement =
+    //   document.querySelector("link[rel='canonical']") ||
+    //   document.createElement('link');
+    // link.setAttribute('rel', 'canonical');
+    // link.setAttribute('href', url);
+    // document.head.appendChild(link);
+    const existing = this.document.querySelector("link[rel='canonical']") as HTMLLinkElement;
+
+    if (existing) {
+      existing.remove();
+    } 
+    // Create and append
+    const link = this.document.createElement('link');
     link.setAttribute('rel', 'canonical');
     link.setAttribute('href', url);
-    document.head.appendChild(link);
+    this.document.head.appendChild(link);
   }
 
   // Your existing arrays - these will be populated from API

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 
@@ -11,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ContactUsComponent {
   constructor(private meta: Meta,
-    private title: Title, private route: ActivatedRoute) {
+    private title: Title, private route: ActivatedRoute, @Inject(DOCUMENT) private doc: Document) {
     // Set page title
     this.title.setTitle('Contact Welfast Hearing Your Local Hearing Care Experts');
 
@@ -49,9 +50,20 @@ export class ContactUsComponent {
     });
   }
   private setCanonicalUrl(url: string) {
-    let link: HTMLLinkElement = document.querySelector("link[rel='canonical']") || document.createElement('link');
+    // let link: HTMLLinkElement = document.querySelector("link[rel='canonical']") || document.createElement('link');
+    // link.setAttribute('rel', 'canonical');
+    // link.setAttribute('href', url);
+    // document.head.appendChild(link);
+
+    const existing = this.doc.querySelector("link[rel='canonical']") as HTMLLinkElement;
+
+    if (existing) {
+      existing.remove();
+    } 
+    // Create and append
+    const link = this.doc.createElement('link');
     link.setAttribute('rel', 'canonical');
     link.setAttribute('href', url);
-    document.head.appendChild(link);
+    this.doc.head.appendChild(link);
   }
 }
