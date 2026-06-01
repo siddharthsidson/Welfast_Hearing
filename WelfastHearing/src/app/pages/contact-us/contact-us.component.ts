@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-contact-us',
@@ -10,7 +11,7 @@ import { Meta, Title } from '@angular/platform-browser';
 })
 export class ContactUsComponent {
   constructor(private meta: Meta,
-    private title: Title) {
+    private title: Title, private route: ActivatedRoute) {
     // Set page title
     this.title.setTitle('Contact Welfast Hearing Your Local Hearing Care Experts');
 
@@ -34,6 +35,18 @@ export class ContactUsComponent {
 
     // Set canonical URL
     this.setCanonicalUrl('https://welfasthearing.com.au/Contact-us');
+  }
+  ngOnInit() {
+    this.route.fragment.subscribe(fragment => {
+      if (fragment) {
+        setTimeout(() => {
+          const el = document.getElementById(fragment);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 100);
+      }
+    });
   }
   private setCanonicalUrl(url: string) {
     let link: HTMLLinkElement = document.querySelector("link[rel='canonical']") || document.createElement('link');
