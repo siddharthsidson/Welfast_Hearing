@@ -118,7 +118,7 @@ export class ProductDetailComponent {
     //console.log(`Customer wants to purchase: ${this.product.name}`);
 
     setTimeout(() => {
-      window.open('tel:+15551234567');
+      window.open('tel:0243115511');
       setTimeout(() => {
         this.isCalling = false;
       }, 2000);
