@@ -106,7 +106,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       title: 'Personalized Care',
       alt: 'Hearing test and advanced audiology care at Welfast Hearing with personalized hearing solutions in Central Coast and Lake Macquarie',
       slug: 'personalized-care',
-      image: '../../../assets/homewhychoosewellfast/image_1.webp',
+      image: '../../../assets/homewhychoosewellfast/Hearing-test-and-advanced-audiology-care-at-Welfast-Hearing-with-personalized-hearing-solutions-in-Central-Coast-and-Lake-Macquarie.webp',
       fullContent:
         'We are committed to providing personalized and state-of-the-art hearing care and the latest technology...',
       showMore: false,
@@ -116,7 +116,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       title: 'Informed Choices',
       alt: 'Person wearing audiometric headphones during a professional hearing test at Welfast Hearing, Central Coast and Lake Macquarie.',
       slug: 'informed-choices',
-      image: '../../../assets/homewhychoosewellfast/image_2.webp',
+      image: '../../../assets/homewhychoosewellfast/Person-wearing-audiometric-headphones-during-a-professional-hearing-test-at-Welfast-Hearing-Central-Coast-and-Lake-Macquarie.webp',
       fullContent:
         'In Welfast Hearing, we believe in informed choices or decisions made by you...',
       showMore: false,
@@ -126,7 +126,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       title: 'Government Funding & Payment Plans',
       alt: 'Government funding and payment plans for hearing aids and hearing tests at Welfast Hearing.',
       slug: 'government-funding-and-payment-plans',
-      image: '../../../assets/homewhychoosewellfast/image_3.webp',
+      image: '../../../assets/homewhychoosewellfast/Government-funding-and-payment-plans-for-hearing-aids-and-hearing-tests-at-Welfast-Hearing.webp',
       fullContent:
         'We assist you in availing of government funding/rebates through hearing service programs...',
       showMore: false,
@@ -136,7 +136,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       title: 'Ongoing After Care',
       alt: 'Ongoing aftercare and audiology support at Welfast Hearing for long-term hearing health on the Central Coast and Lake Macquarie.',
       slug: 'ongoing-after-care',
-      image: '../../../assets/homewhychoosewellfast/image_4.webp',
+      image: '../../../assets/homewhychoosewellfast/Ongoing-aftercare-and-audiology-support-at-Welfast-Hearing-for-long-term-hearing-health-on-the-Central-Coast-and-Lake-Macquarie.webp',
       fullContent:
         'We believe in long-standing relationships and ongoing aftercare...',
       showMore: false,
@@ -146,7 +146,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       title: 'Hassle-Free Purchase',
       alt: 'Hassle-free hearing aid purchase at Welfast Hearing, Central Coast and Lake Macquarie.',
       slug: 'hassle-free-purchase',
-      image: '../../../assets/homewhychoosewellfast/image_5.webp',
+      image: '../../../assets/homewhychoosewellfast/Hassle-free-hearing-aid-purchase-at-Welfast-Hearing-Central-Coast-and-Lake-Macquarie.webp',
       fullContent:
         'Purchasing hearing aids is a long-term investment in your hearing and overall wellness...',
       showMore: false,

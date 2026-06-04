@@ -38,22 +38,22 @@ export class AllContentComponent implements OnInit {
   // Sample data for services
   services = [
     {
-      icon: './../../assets/1.svg',
+      icon: './../../assets/Comprehensive-Hearing-Test.svg',
       title: 'Comprehensive Hearing Test',
       description: 'Complete diagnostic hearing assessments using state-of-the-art equipment and techniques.'
     },
     {
-      icon: '../../../assets/2.svg',
+      icon: '../../../assets/Tinnitus-Evaluation.svg',
       title: 'Tinnitus Evaluation',
       description: 'Specialized evaluation and management programs for tinnitus relief and management.'
     },
     {
-      icon: '../../../assets/3.svg',
+      icon: '../../../assets/Hearing-Aids-Fitting-and-Care.svg',
       title: 'Hearing Aids Fitting',
       description: 'Expert fitting and customization of the latest hearing aid technology for your needs.'
     },
     {
-      icon: '../../../assets/4.svg',
+      icon: '../../../assets/Ear-Wax-Removal.svg',
       title: 'Ear Wax Removal',
       description: 'Safe and professional micro-suction ear wax removal procedures.'
     }
@@ -63,27 +63,27 @@ export class AllContentComponent implements OnInit {
   whyChooseUs = [
     {
       title: 'Personalized Care',
-      image: '../../../assets/homewhychoosewellfast/image_1.jpg',
+      image: '../../../assets/homewhychoosewellfast/Hearing-test-and-advanced-audiology-care-at-Welfast-Hearing-with-personalized-hearing-solutions-in-Central-Coast-and-Lake-Macquarie.jpg',
       description: 'We are committed to providing personalized and state-of-the-art hearing care and the latest technology to each and every customer. We help you choose the latest Assistive Listening Devices (ALDs) and hearing aids based on your hearing loss, lifestyle, expectations, and unique listening goals.'
     },
     {
       title: 'Informed Choices',
-      image: '../../../assets/homewhychoosewellfast/image_2.jpg',
+      image: '../../../assets/homewhychoosewellfast/Person-wearing-audiometric-headphones-during-a-professional-hearing-test-at-Welfast-Hearing-Central-Coast-and-Lake-Macquarie.jpg',
       description: 'In Welfast Hearing, we believe in informed choices or decisions made by you. No one else knows better than you about your hearing difficulties and their impact on everyday life. Together, through an informed decision-making process, we choose the best hearing solution for you.'
     },
     {
       title: 'Government Funding',
-      image: '../../../assets/homewhychoosewellfast/image_3.jpg',
+      image: '../../../assets/homewhychoosewellfast/Government-funding-and-payment-plans-for-hearing-aids-and-hearing-tests-at-Welfast-Hearing.jpg',
       description: 'We are committed to providing affordable hearing solutions to the community. We assist you in availing of government funding/rebates through the hearing service program, NDIS, DVA, private health funds, and NSW Workers Compensation.'
     },
     {
       title: 'Ongoing After Care',
-      image: '../../../assets/homewhychoosewellfast/image_4.jpg',
+      image: '../../../assets/homewhychoosewellfast/Ongoing-aftercare-and-audiology-support-at-Welfast-Hearing-for-long-term-hearing-health-on-the-Central-Coast-and-Lake-Macquarie.jpg',
       description: 'We believe in long-standing relationships and ongoing aftercare. All hearing aids come with a minimum of a 3-year international warranty and annual hearing care consultations.'
     },
     {
       title: 'Hassle-Free Purchase',
-      image: '../../../assets/homewhychoosewellfast/image_5.jpg',
+      image: '../../../assets/homewhychoosewellfast/Hassle-free-hearing-aid-purchase-at-Welfast-Hearing-Central-Coast-and-Lake-Macquarie.jpg',
       description: 'Purchasing hearing aids is a long-term investment in your hearing and overall wellness. Our commitment-free hearing aid trial and 30-day money-back guarantee ensure a hassle-free purchase experience.'
     }
   ];
