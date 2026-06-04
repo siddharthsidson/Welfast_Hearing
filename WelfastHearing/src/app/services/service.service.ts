@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class ServiceService {
   // Observable that components can subscribe to
   navbarVisible$ = this.navbarVisible.asObservable();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, @Inject(PLATFORM_ID) private platformId: Object) { }
 
   show() {
     this.navbarVisible.next(true);
@@ -106,5 +107,20 @@ export class ServiceService {
    editService(formData: FormData): Observable<any> {
     const headers = this.getAuthHeaders(); // Use FormData headers
     return this.http.post(this.baseUrl + 'services_edit', formData, { headers });
+  }
+
+  setSchema(schema: any): void {
+    if (isPlatformBrowser(this.platformId)) {
+      let script = document.getElementById('schema-org-script') as HTMLScriptElement;
+      
+      if (!script) {
+        script = document.createElement('script');
+        script.id = 'schema-org-script';
+        script.type = 'application/ld+json';
+        document.head.appendChild(script);
+      }
+      
+      script.innerHTML = JSON.stringify(schema);
+    }
   }
 }
