@@ -60,12 +60,6 @@ export class AboutUsComponent {
   }
 
   private setCanonicalUrl(url: string) {
-    // let link: HTMLLinkElement =
-    //   document.querySelector("link[rel='canonical']") ||
-    //   document.createElement('link');
-    // link.setAttribute('rel', 'canonical');
-    // link.setAttribute('href', url);
-    // document.head.appendChild(link);
     const existing = this.doc.querySelector("link[rel='canonical']") as HTMLLinkElement;
 
     if (existing) {

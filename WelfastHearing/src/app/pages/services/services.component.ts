@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { CommonModule, DOCUMENT } from '@angular/common';
+import { Component, Inject } from '@angular/core';
 import { HearingAidsComponent } from '../products/hearing-aids/hearing-aids.component';
 import { HearingaidService } from '../hearingService/hearingaid.service';
 import { StripHtmlPipe } from './strip-html.pipe';
@@ -24,7 +24,8 @@ export class ServicesComponent {
     private servicesService: ServiceService,
     private meta: Meta,
     private title: Title,
-    private router: Router
+    private router: Router,
+    @Inject(DOCUMENT) private doc: Document
   ) {
     this.title.setTitle(
       'Comprehensive Hearing Services – Tests, Aids & Wax Removal'
@@ -68,12 +69,16 @@ export class ServicesComponent {
     this.setCanonicalUrl('https://welfasthearing.com.au/Services');
   }
   private setCanonicalUrl(url: string) {
-    let link: HTMLLinkElement =
-      document.querySelector("link[rel='canonical']") ||
-      document.createElement('link');
+    const existing = this.doc.querySelector("link[rel='canonical']") as HTMLLinkElement;
+
+    if (existing) {
+      existing.remove();
+    } 
+    // Create and append
+    const link = this.doc.createElement('link');
     link.setAttribute('rel', 'canonical');
     link.setAttribute('href', url);
-    document.head.appendChild(link);
+    this.doc.head.appendChild(link);
   }
 
   ngOnInit(): void {

@@ -9,7 +9,7 @@ import { SafeHtmlPipe } from '../../services/safe-html.pipe';
 @Component({
   selector: 'app-hearing-aids',
   standalone: true,
-  imports: [CommonModule,SafeHtmlPipe],
+  imports: [CommonModule, SafeHtmlPipe],
   templateUrl: './hearing-aids.component.html',
   styleUrl: './hearing-aids.component.css',
 })
@@ -19,11 +19,11 @@ export class HearingAidsComponent {
     private title: Title,
     private serviceService: ServiceService,
     private router: Router,
-    @Inject(DOCUMENT) private document: Document
+    @Inject(DOCUMENT) private document: Document,
   ) {
     // Set page title
     this.title.setTitle(
-      'Hearing Aids in Central Coast | Bluetooth & Rechargeable Options'
+      'Hearing Aids in Central Coast | Bluetooth & Rechargeable Options',
     );
 
     // Set meta description
@@ -65,17 +65,13 @@ export class HearingAidsComponent {
     this.setCanonicalUrl('https://welfasthearing.com.au/Hearing-aids');
   }
   private setCanonicalUrl(url: string) {
-    // let link: HTMLLinkElement =
-    //   document.querySelector("link[rel='canonical']") ||
-    //   document.createElement('link');
-    // link.setAttribute('rel', 'canonical');
-    // link.setAttribute('href', url);
-    // document.head.appendChild(link);
-    const existing = this.document.querySelector("link[rel='canonical']") as HTMLLinkElement;
+    const existing = this.document.querySelector(
+      "link[rel='canonical']",
+    ) as HTMLLinkElement;
 
     if (existing) {
       existing.remove();
-    } 
+    }
     // Create and append
     const link = this.document.createElement('link');
     link.setAttribute('rel', 'canonical');
@@ -96,22 +92,22 @@ export class HearingAidsComponent {
   }
 
   addProductSchema() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "itemListElement": this.hearingAidsList.map((item, index) => ({
-      "@type": "Product",
-      "position": index + 1,
-      "name": item.title,
-      "image": item.image,
-      "description": item.description,
-      "brand": {
-        "@type": "Brand",
-        "name": "Welfast Hearing"
-      },
-      "url": `https://welfasthearing.com.au/product-details/${item.slug}`
-    }))
-  };
+    const schema = {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      itemListElement: this.hearingAidsList.map((item, index) => ({
+        '@type': 'Product',
+        position: index + 1,
+        name: item.title,
+        image: item.image,
+        description: item.description,
+        brand: {
+          '@type': 'Brand',
+          name: 'Welfast Hearing',
+        },
+        url: `https://welfasthearing.com.au/product-details/${item.slug}`,
+      })),
+    };
 
     const script = this.document.createElement('script');
     script.type = 'application/ld+json';
@@ -141,15 +137,15 @@ export class HearingAidsComponent {
           //console.log('All Products:', allProducts); // Debug log
           // Filter products by type into separate arrays
           this.hearingAidsList = allProducts.filter(
-            (product: any) => product.type === 'hearing-a'
+            (product: any) => product.type === 'hearing-a',
           );
 
           this.hearingAidAccessoriesList = allProducts.filter(
-            (product: any) => product.type === 'hearing-b'
+            (product: any) => product.type === 'hearing-b',
           );
 
           this.assistiveListeningDevicesList = allProducts.filter(
-            (product: any) => product.type === 'hearing-c'
+            (product: any) => product.type === 'hearing-c',
           );
 
           //console.log('Hearing Aids:', this.hearingAidsList);
@@ -169,7 +165,7 @@ export class HearingAidsComponent {
   }
   toSeoFriendly(text: string): string {
     return text
-     .toLowerCase()
+      .toLowerCase()
       .trim()
       .replace(/\s+/g, '-') // replace spaces with dashes
       .replace(/[^\w\-]+/g, '') // remove non-word characters

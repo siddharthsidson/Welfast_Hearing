@@ -8,45 +8,65 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './faq.component.html',
-  styleUrl: './faq.component.css'
+  styleUrl: './faq.component.css',
 })
 export class FAQComponent {
-
-  constructor(private router: Router, private meta: Meta, private title: Title, @Inject(DOCUMENT) private doc: Document) {
-    this.title.setTitle('Welfast Hearing FAQ – Micro Suction Ear Wax Removal, Hearing Tests & Hearing Aids');
+  constructor(
+    private router: Router,
+    private meta: Meta,
+    private title: Title,
+    @Inject(DOCUMENT) private doc: Document,
+  ) {
+    this.title.setTitle(
+      'Welfast Hearing FAQ – Micro Suction Ear Wax Removal, Hearing Tests & Hearing Aids',
+    );
 
     // Set meta description
     this.meta.updateTag({
       name: 'description',
-      content: 'Find answers to common questions on microsuction ear wax removal, hearing tests, advanced hearing aids. Learn more about rechargeable hearing aids and Bluetooth hearing aid options at WelfastHearing, Central Coast.'
+      content:
+        'Find answers to common questions on microsuction ear wax removal, hearing tests, advanced hearing aids. Learn more about rechargeable hearing aids and Bluetooth hearing aid options at WelfastHearing, Central Coast.',
     });
 
     // Set keywords
     this.meta.updateTag({
       name: 'keywords',
-      content: 'micro suction ear wax removal, hearing test, hearing aids, rechargeable hearing aids'
+      content:
+        'micro suction ear wax removal, hearing test, hearing aids, rechargeable hearing aids',
     });
 
     // Set Open Graph tags
-    this.meta.updateTag({ property: 'og:title', content: 'Welfast Hearing FAQ – Micro Suction Ear Wax Removal, Hearing Tests & Hearing Aids' });
-    this.meta.updateTag({ property: 'og:description', content: 'Find answers to common questions on micro suction ear wax removal, hearing tests, advanced hearing aids. Learn more about rechargeable hearing aids and Bluetooth hearing aid options at WelfastHearing, Central Coast.' });
-    this.meta.updateTag({ property: 'og:image', content: '	https://welfasthearing.com.au/assets/Banner-images/5.png' });
-    this.meta.updateTag({ property: 'og:url', content: 'https://welfasthearing.com.au/' });
+    this.meta.updateTag({
+      property: 'og:title',
+      content:
+        'Welfast Hearing FAQ – Micro Suction Ear Wax Removal, Hearing Tests & Hearing Aids',
+    });
+    this.meta.updateTag({
+      property: 'og:description',
+      content:
+        'Find answers to common questions on micro suction ear wax removal, hearing tests, advanced hearing aids. Learn more about rechargeable hearing aids and Bluetooth hearing aid options at WelfastHearing, Central Coast.',
+    });
+    this.meta.updateTag({
+      property: 'og:image',
+      content: '	https://welfasthearing.com.au/assets/Banner-images/5.png',
+    });
+    this.meta.updateTag({
+      property: 'og:url',
+      content: 'https://welfasthearing.com.au/',
+    });
 
     // Set canonical URL
     this.setCanonicalUrl('https://welfasthearing.com.au/FAQ');
   }
 
   private setCanonicalUrl(url: string) {
-    // let link: HTMLLinkElement = document.querySelector("link[rel='canonical']") || document.createElement('link');
-    // link.setAttribute('rel', 'canonical');
-    // link.setAttribute('href', url);
-    // document.head.appendChild(link);
-    const existing = this.doc.querySelector("link[rel='canonical']") as HTMLLinkElement;
+    const existing = this.doc.querySelector(
+      "link[rel='canonical']",
+    ) as HTMLLinkElement;
 
     if (existing) {
       existing.remove();
-    } 
+    }
     // Create and append
     const link = this.doc.createElement('link');
     link.setAttribute('rel', 'canonical');
@@ -54,33 +74,39 @@ export class FAQComponent {
     this.doc.head.appendChild(link);
   }
 
-
   faqItems: any[] = [
     {
-      question: "How is Welfast Hearing different from large hearing aid chains?",
-      answer: "Unlike big corporate clinics, Welfast Hearing is an independent, locally focused provider. We're not tied to one manufacturer, so we recommend the best hearing aid for your needs—not what we're told to sell. You'll always receive personalised care with us.",
-      isOpen: false
+      question:
+        'How is Welfast Hearing different from large hearing aid chains?',
+      answer:
+        "Unlike big corporate clinics, Welfast Hearing is an independent, locally focused provider. We're not tied to one manufacturer, so we recommend the best hearing aid for your needs—not what we're told to sell. You'll always receive personalised care with us.",
+      isOpen: false,
     },
     {
-      question: "Is micro-suction safe for children and seniors?",
-      answer: "Yes. Micro-suction ear wax removal is safe for all ages, including children and older adults. It's gentle, precise, and performed under direct vision, making it one of the safest methods available.",
-      isOpen: false
+      question: 'Is micro-suction safe for children and seniors?',
+      answer:
+        "Yes. Micro-suction ear wax removal is safe for all ages, including children and older adults. It's gentle, precise, and performed under direct vision, making it one of the safest methods available.",
+      isOpen: false,
     },
     {
-      question: "How long do modern hearing aids last?",
-      answer: "With proper care, today's digital hearing aids last between 5 to 7 years. At Welfast Hearing, we also provide ongoing maintenance and adjustments to extend their lifespan and keep performance at its best.",
-      isOpen: false
+      question: 'How long do modern hearing aids last?',
+      answer:
+        "With proper care, today's digital hearing aids last between 5 to 7 years. At Welfast Hearing, we also provide ongoing maintenance and adjustments to extend their lifespan and keep performance at its best.",
+      isOpen: false,
     },
     {
-      question: "Do untreated hearing problems affect brain health?",
-      answer: "Research shows that untreated hearing loss can increase the risk of cognitive decline and social isolation. By treating hearing loss early with hearing aids or ear care, you can protect both your hearing and overall well-being.",
-      isOpen: false
+      question: 'Do untreated hearing problems affect brain health?',
+      answer:
+        'Research shows that untreated hearing loss can increase the risk of cognitive decline and social isolation. By treating hearing loss early with hearing aids or ear care, you can protect both your hearing and overall well-being.',
+      isOpen: false,
     },
     {
-      question: "How soon will I notice a difference after getting hearing aids?",
-      answer: "Most people notice an immediate improvement, especially with clarity of speech. However, your brain may take a few weeks to adjust to new sounds. We provide follow-up appointments to fine-tune your device for the best results.",
-      isOpen: false
-    }
+      question:
+        'How soon will I notice a difference after getting hearing aids?',
+      answer:
+        'Most people notice an immediate improvement, especially with clarity of speech. However, your brain may take a few weeks to adjust to new sounds. We provide follow-up appointments to fine-tune your device for the best results.',
+      isOpen: false,
+    },
   ];
 
   toggleFAQ(index: number): void {
