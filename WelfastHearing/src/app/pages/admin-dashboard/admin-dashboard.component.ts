@@ -61,7 +61,8 @@ export class AdminDashboardComponent {
       // SEO fields for ALL tabs (blogs, products, services)
       title: ['', Validators.required],
       metaKeyword: ['', Validators.required],
-      metaDescription: ['', [Validators.required, Validators.maxLength(160)]]
+      metaDescription: ['', [Validators.required, Validators.maxLength(160)]],
+      url: ['', [Validators.required]]
     });
   }
 
@@ -106,7 +107,8 @@ export class AdminDashboardComponent {
       type: item.type || '',
       title: item.title || '',
       metaKeyword: item.metaKeyword || '',
-      metaDescription: item.metaDescription || ''
+      metaDescription: item.metaDescription || '',
+      url: item.url
     });
 
     // Set image preview to show current image
@@ -281,7 +283,7 @@ export class AdminDashboardComponent {
     }
 
     // 🎯 SEO validation for ALL tabs (blogs, products, services)
-    if (!this.uploadForm.get('title')?.value ||
+    if (!this.uploadForm.get('url')?.value || !this.uploadForm.get('title')?.value ||
         !this.uploadForm.get('metaKeyword')?.value ||
         !this.uploadForm.get('metaDescription')?.value) {
       this.message = '❌ Please fill all SEO fields (Title, Keywords, Description)';
@@ -303,6 +305,7 @@ export class AdminDashboardComponent {
 
     formData.append('content', this.uploadForm.get('content')?.value);
     formData.append('heading', this.uploadForm.get('heading')?.value);
+    formData.append('url_', this.uploadForm.get('url')?.value);
 
     // Add ID for edit mode
     if (this.isEditMode && this.editingItem) {
@@ -420,7 +423,8 @@ export class AdminDashboardComponent {
             image: environment.url + item.image,
             title: item.meta_title || item.title || '',
             metaKeyword: item.meta_keyword || item.metaKeyword || '',
-            metaDescription: item.meta_desc || item.meta_description || ''
+            metaDescription: item.meta_desc || item.meta_description || '',
+            url: item.url_ || ''
           }));
 
           //console.log('Mapped data:', this.mappeddata);

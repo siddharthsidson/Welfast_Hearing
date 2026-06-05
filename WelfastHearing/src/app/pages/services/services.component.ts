@@ -240,9 +240,10 @@ export class ServicesComponent implements OnInit, OnDestroy {
           this.services = response.data.map((apiService: any) => ({
             // Map API fields to your UI structure
             title: apiService.heading, // API 'heading' → UI 'title'
+            metaDesc: apiService.meta_desc,
             fullContent: apiService.content, // API 'content' → UI 'fullText'
             image: environment.url + apiService.image,
-            slug: this.toSeoFriendly(apiService.heading), // Create full image URL
+            slug: this.toSeoFriendly(apiService.url_), // Create full image URL
 
             // Keep your existing UI functionality
             showMore: false, // Default collapsed state

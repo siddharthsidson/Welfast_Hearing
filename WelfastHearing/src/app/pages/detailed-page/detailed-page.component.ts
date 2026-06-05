@@ -15,6 +15,7 @@ import { ServiceService } from '../../services/service.service';
 export class DetailedPageComponent implements OnInit, OnDestroy {
   pageData = {
     title: '',
+    description: '',
     content: '',
     image: '',
     slug: '',
@@ -284,6 +285,7 @@ export class DetailedPageComponent implements OnInit, OnDestroy {
         slug,
       );
       this.pageData.title = 'Content not available';
+      this.pageData.description = '';
       this.pageData.content =
         'Please navigate from the homepage or fetch content dynamically by slug.';
       this.pageData.hasContent = true;
@@ -291,13 +293,14 @@ export class DetailedPageComponent implements OnInit, OnDestroy {
       this.titleService.setTitle('Welfast Hearing - Details');
       this.meta.updateTag({
         name: 'description',
-        content: this.pageData.content,
+        content: this.pageData.description,
       });
     }
   }
 
   private setPageData(card: any) {
     this.pageData.title = card.title;
+    this.pageData.description = card.metaDesc;
     this.pageData.content = card.fullContent;
     this.pageData.image = card.image;
     this.pageData.slug = card.slug;
@@ -305,11 +308,11 @@ export class DetailedPageComponent implements OnInit, OnDestroy {
 
     // Set SEO-friendly meta tags
     this.titleService.setTitle(`${card.title} - Welfast Hearing`);
-    this.meta.updateTag({ name: 'description', content: card.fullContent });
+    this.meta.updateTag({ name: 'description', content: card.metaDesc });
     this.meta.updateTag({ property: 'og:title', content: card.title });
     this.meta.updateTag({
       property: 'og:description',
-      content: card.fullContent,
+      content: card.metaDesc,
     });
     this.meta.updateTag({ property: 'og:image', content: card.image });
     this.meta.updateTag({
