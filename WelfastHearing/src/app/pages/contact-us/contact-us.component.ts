@@ -121,11 +121,18 @@ export class ContactUsComponent {
       'Contact Welfast Hearing Your Local Hearing Care Experts',
     );
 
+    // Set meta title
+    this.meta.updateTag({
+      name: 'title',
+      content:
+        'Contact Welfast Hearing | Hearing Care Experts',
+    });
+
     // Set meta description
     this.meta.updateTag({
       name: 'description',
       content:
-        'Get in touch with Welfast Hearing for expert hearing tests, micro suction ear wax removal, and hearing aid consultations. Serving Central Coast & Lake Macquarie with audiologist-owned care.',
+        'Contact Welfast Hearing for hearing tests, hearing aids and ear wax removal across Morisset, Bateau Bay, Central Mangrove and Woongarrah.',
     });
 
     // Set keywords

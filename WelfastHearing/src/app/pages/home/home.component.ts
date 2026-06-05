@@ -220,9 +220,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     this.meta.addTags([
       {
+        name: 'title',
+        content:
+          'Hearing Tests & Hearing Aids | Welfast Hearing',
+      },
+      {
         name: 'description',
         content:
-          'Welfast Hearing offers professional hearing tests, micro suction ear wax removal, and the latest Bluetooth and rechargeable hearing aids. Audiologist-owned care in Central Coast and Lake Macquarie.',
+          'Book hearing tests and hearing aids with Welfast Hearing in Central Coast and Lake Macquarie. Expert audiologists, personalised fittings and ear wax removal.',
       },
       {
         name: 'keywords',

@@ -21,11 +21,18 @@ export class AboutUsComponent {
       'Welfast Hearing – Experts in Micro Suction Ear Wax Removal, Hearing Tests & Bluetooth Hearing Aids',
     );
 
+    // Set meta title
+    this.meta.updateTag({
+      name: 'title',
+      content:
+        'About Welfast Hearing | Central Coast Audiologists',
+    });
+
     // Set meta description
     this.meta.updateTag({
       name: 'description',
       content:
-        'Based in the CentralCoast & LakeMacquarie, Welfast Hearing offers expert hearing tests micro suction earwax removal, and advanced hearing aids — including rechargeable & Bluetooth-enableddevices — withpersonalised care.',
+        'Learn about Welfast Hearing, providing hearing tests, hearing aids, tinnitus care and ear wax removal across Central Coast and Lake Macquarie.',
     });
 
     // Set keywords

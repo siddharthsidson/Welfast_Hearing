@@ -21,11 +21,18 @@ export class FAQComponent {
       'Welfast Hearing FAQ – Micro Suction Ear Wax Removal, Hearing Tests & Hearing Aids',
     );
 
+    // Set meta title
+    this.meta.updateTag({
+      name: 'title',
+      content:
+        'Hearing Care FAQs Central Coast | Welfast Hearing',
+    });
+
     // Set meta description
     this.meta.updateTag({
       name: 'description',
       content:
-        'Find answers to common questions on microsuction ear wax removal, hearing tests, advanced hearing aids. Learn more about rechargeable hearing aids and Bluetooth hearing aid options at WelfastHearing, Central Coast.',
+        'Get answers about hearing tests, hearing aids, tinnitus care and ear wax removal from Welfast Hearing in Central Coast and Lake Macquarie.',
     });
 
     // Set keywords

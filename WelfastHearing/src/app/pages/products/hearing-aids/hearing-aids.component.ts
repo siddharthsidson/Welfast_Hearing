@@ -170,11 +170,18 @@ export class HearingAidsComponent {
       'Hearing Aids in Central Coast | Bluetooth & Rechargeable Options',
     );
 
+    // Set meta title
+    this.meta.updateTag({
+      name: 'title',
+      content:
+        'Hearing Aids & Devices | Welfast Hearing',
+    });
+
     // Set meta description
     this.meta.updateTag({
       name: 'description',
       content:
-        'Explore high-quality hearing aids at Welfast Hearing, including Bluetooth and rechargeable options. We also provide hearing tests and micro suction ear wax removal for complete hearing wellness.',
+        'Explore hearing aids and devices at Welfast Hearing, including rechargeable, BTE, custom, Oticon and assistive listening solutions tailored to your needs.',
     });
 
     // Set keywords

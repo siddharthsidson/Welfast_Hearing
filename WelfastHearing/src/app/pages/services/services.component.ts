@@ -160,11 +160,18 @@ export class ServicesComponent implements OnInit, OnDestroy {
       'Comprehensive Hearing Services – Tests, Aids & Wax Removal',
     );
 
+    // Set meta title
+    this.meta.updateTag({
+      name: 'title',
+      content:
+        'Hearing Services Central Coast | Welfast Hearing',
+    });
+
     // Set meta description
     this.meta.updateTag({
       name: 'description',
       content:
-        'Explore professional hearing services at Welfast Hearing—Hearing Tests, Micro Suction Ear Wax Removal, Bluetooth Hearing Aids, and Rechargeable Hearing Aids. Expert care in Central Coast & Lake Macquarie.',
+        'Welfast Hearing offers hearing tests, hearing aids, tinnitus assessments and micro suction ear wax removal across Central Coast and Lake Macquarie.',
     });
 
     // Set keywords
