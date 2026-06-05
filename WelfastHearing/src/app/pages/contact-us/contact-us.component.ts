@@ -2,6 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { Component, Inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
+import { ServiceService } from '../../services/service.service';
 
 @Component({
   selector: 'app-contact-us',
@@ -11,10 +12,108 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './contact-us.component.css',
 })
 export class ContactUsComponent {
+  schemaOrgJson = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'MedicalClinic',
+        '@id': 'https://welfasthearing.com.au/#localbusiness',
+        name: 'Welfast Hearing',
+        url: 'https://welfasthearing.com.au/',
+        logo: 'https://welfasthearing.com.au/assets/Welfast%20Hearing%20Branding%20Kit-08.png',
+        image:
+          'https://welfasthearing.com.au/assets/Welfast%20Hearing%20Branding%20Kit-08.png',
+        telephone: '+61 2 4311 5511',
+        email: 'admin@welfasthearing.com.au',
+        priceRange: '$$',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Shop 020/12 Bay Village Rd',
+          addressLocality: 'Bateau Bay',
+          addressRegion: 'NSW',
+          postalCode: '2261',
+          addressCountry: 'AU',
+        },
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: 'REPLACE_WITH_LAT',
+          longitude: 'REPLACE_WITH_LNG',
+        },
+        openingHoursSpecification: [
+          {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+            opens: '09:00',
+            closes: '17:00',
+          },
+        ],
+        contactPoint: [
+          {
+            '@type': 'ContactPoint',
+            contactType: 'customer service',
+            telephone: '+61 2 4311 5511',
+            email: 'admin@welfasthearing.com.au',
+            areaServed: 'AU',
+            availableLanguage: ['English'],
+          },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': 'https://welfasthearing.com.au/Contact-us/#webpage',
+        url: 'https://welfasthearing.com.au/Contact-us',
+        name: 'Contact Welfast Hearing – Book Hearing Test & Consultation',
+        description:
+          'Contact Welfast Hearing for professional hearing tests, hearing aids, and ear care services in Central Coast and Lake Macquarie.',
+        isPartOf: {
+          '@id': 'https://welfasthearing.com.au/#website',
+        },
+        about: {
+          '@id': 'https://welfasthearing.com.au/#localbusiness',
+        },
+        primaryImageOfPage: {
+          '@type': 'ImageObject',
+          url: 'https://welfasthearing.com.au/assets/Welfast%20Hearing%20Branding%20Kit-08.png',
+        },
+        inLanguage: 'en-AU',
+      },
+      {
+        '@type': 'ContactPage',
+        '@id': 'https://welfasthearing.com.au/Contact-us/#contactpage',
+        name: 'Contact Welfast Hearing',
+        url: 'https://welfasthearing.com.au/Contact-us',
+        isPartOf: {
+          '@id': 'https://welfasthearing.com.au/#website',
+        },
+        about: {
+          '@id': 'https://welfasthearing.com.au/#localbusiness',
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': 'https://welfasthearing.com.au/Contact-us/#breadcrumb',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://welfasthearing.com.au/',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Contact Us',
+            item: 'https://welfasthearing.com.au/Contact-us',
+          },
+        ],
+      },
+    ],
+  };
   constructor(
     private meta: Meta,
     private title: Title,
     private route: ActivatedRoute,
+    private servicesService: ServiceService,
     @Inject(DOCUMENT) private doc: Document,
   ) {
     // Set page title
@@ -69,6 +168,10 @@ export class ContactUsComponent {
         }, 100);
       }
     });
+    this.servicesService.setSchema(this.schemaOrgJson);
+  }
+  ngOnDestroy() {
+    this.servicesService.removeSchema();
   }
   private setCanonicalUrl(url: string) {
     const existing = this.doc.querySelector(

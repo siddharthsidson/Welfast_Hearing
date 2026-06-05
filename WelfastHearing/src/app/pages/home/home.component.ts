@@ -266,6 +266,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     observer.observe(this.sectionRef.nativeElement);
   }
+  ngOnDestroy() {
+    this.servicesService.removeSchema();
+  }
 
   private setCanonicalUrl(url: string) {
     const existing = this.doc.querySelector(

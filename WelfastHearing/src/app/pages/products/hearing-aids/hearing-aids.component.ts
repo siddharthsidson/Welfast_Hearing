@@ -14,6 +14,150 @@ import { SafeHtmlPipe } from '../../services/safe-html.pipe';
   styleUrl: './hearing-aids.component.css',
 })
 export class HearingAidsComponent {
+  schemaOrgJson = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'MedicalClinic',
+        '@id': 'https://welfasthearing.com.au/#localbusiness',
+        name: 'Welfast Hearing',
+        url: 'https://welfasthearing.com.au/',
+        logo: 'https://welfasthearing.com.au/assets/Welfast%20Hearing%20Branding%20Kit-08.png',
+        image:
+          'https://welfasthearing.com.au/assets/Welfast%20Hearing%20Branding%20Kit-08.png',
+        telephone: '+61 2 4311 5511',
+        email: 'admin@welfasthearing.com.au',
+        priceRange: '$$',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Shop 020/12 Bay Village Rd',
+          addressLocality: 'Bateau Bay',
+          addressRegion: 'NSW',
+          postalCode: '2261',
+          addressCountry: 'AU',
+        },
+        openingHoursSpecification: [
+          {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+            opens: '09:00',
+            closes: '17:00',
+          },
+        ],
+        areaServed: [
+          {
+            '@type': 'Place',
+            name: 'Central Coast',
+          },
+          {
+            '@type': 'Place',
+            name: 'Lake Macquarie',
+          },
+        ],
+        knowsAbout: [
+          'Hearing Aids',
+          'Bluetooth Hearing Aids',
+          'Rechargeable Hearing Aids',
+          'Digital Hearing Aids',
+          'Audiology Services',
+          'Hearing Loss Management',
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': 'https://welfasthearing.com.au/Hearing-aids/#webpage',
+        url: 'https://welfasthearing.com.au/Hearing-aids',
+        name: 'Hearing Aids in Central Coast & Lake Macquarie',
+        description:
+          'Explore advanced hearing aids including Bluetooth, rechargeable and discreet hearing solutions in Central Coast and Lake Macquarie at Welfast Hearing.',
+        isPartOf: {
+          '@id': 'https://welfasthearing.com.au/#website',
+        },
+        about: {
+          '@id': 'https://welfasthearing.com.au/#localbusiness',
+        },
+        provider: {
+          '@id': 'https://welfasthearing.com.au/#localbusiness',
+        },
+        primaryImageOfPage: {
+          '@type': 'ImageObject',
+          url: 'https://welfasthearing.com.au/assets/Welfast%20Hearing%20Branding%20Kit-08.png',
+        },
+        inLanguage: 'en-AU',
+      },
+      {
+        '@type': 'Service',
+        '@id': 'https://welfasthearing.com.au/Hearing-aids/#service',
+        name: 'Hearing Aid Solutions',
+        serviceType: 'Audiology Hearing Aid Fitting & Support',
+        description:
+          'Professional hearing aid services including consultation, fitting, adjustment and support for Bluetooth, rechargeable and advanced digital hearing aids.',
+        provider: {
+          '@id': 'https://welfasthearing.com.au/#localbusiness',
+        },
+        areaServed: [
+          {
+            '@type': 'Place',
+            name: 'Central Coast',
+          },
+          {
+            '@type': 'Place',
+            name: 'Lake Macquarie',
+          },
+        ],
+      },
+      {
+        '@type': 'ItemList',
+        '@id': 'https://welfasthearing.com.au/Hearing-aids/#types',
+        name: 'Types of Hearing Aids',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Bluetooth Hearing Aids',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Rechargeable Hearing Aids',
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: 'Behind-the-Ear (BTE) Hearing Aids',
+          },
+          {
+            '@type': 'ListItem',
+            position: 4,
+            name: 'In-the-Ear (ITE) Hearing Aids',
+          },
+          {
+            '@type': 'ListItem',
+            position: 5,
+            name: 'Invisible Hearing Aids',
+          },
+        ],
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': 'https://welfasthearing.com.au/Hearing-aids/#breadcrumb',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://welfasthearing.com.au/',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Hearing Aids',
+            item: 'https://welfasthearing.com.au/Hearing-aids',
+          },
+        ],
+      },
+    ],
+  };
   constructor(
     private meta: Meta,
     private title: Title,
@@ -89,6 +233,10 @@ export class HearingAidsComponent {
   ngOnInit(): void {
     this.loadProductsFromAPI();
     this.addProductSchema();
+    this.serviceService.setSchema(this.schemaOrgJson);
+  }
+  ngOnDestroy() {
+    this.serviceService.removeSchema();
   }
 
   addProductSchema() {
