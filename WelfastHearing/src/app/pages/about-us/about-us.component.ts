@@ -63,7 +63,7 @@ export class AboutUsComponent {
     });
 
     // Set canonical URL
-    this.setCanonicalUrl('https://welfasthearing.com.au/');
+    this.setCanonicalUrl('https://welfasthearing.com.au/about-us');
   }
 
   private setCanonicalUrl(url: string) {
