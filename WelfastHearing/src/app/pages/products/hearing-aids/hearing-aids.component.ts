@@ -9,6 +9,7 @@ import { SafeHtmlPipe } from '../../services/safe-html.pipe';
 @Component({
   selector: 'app-hearing-aids',
   standalone: true,
+  host: { ngSkipHydration: 'true' },
   imports: [CommonModule, SafeHtmlPipe],
   templateUrl: './hearing-aids.component.html',
   styleUrl: './hearing-aids.component.css',

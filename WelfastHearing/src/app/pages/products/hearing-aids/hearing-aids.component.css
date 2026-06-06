@@ -82,6 +82,8 @@
   margin-bottom: 10px;
   font-family:  Inria Sans, sans-serif;
   font-weight: 300;
+  height: 7.5rem;
+  overflow: hidden;
 }
 
 .product-image {

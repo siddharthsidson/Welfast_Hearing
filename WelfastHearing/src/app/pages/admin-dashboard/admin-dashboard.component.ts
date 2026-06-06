@@ -424,7 +424,7 @@ export class AdminDashboardComponent {
             title: item.meta_title || item.title || '',
             metaKeyword: item.meta_keyword || item.metaKeyword || '',
             metaDescription: item.meta_desc || item.meta_description || '',
-            url: item.url_ || ''
+            url: item.url_ || item.heading || ''
           }));
 
           //console.log('Mapped data:', this.mappeddata);
