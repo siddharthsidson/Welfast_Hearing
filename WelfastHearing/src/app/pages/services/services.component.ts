@@ -287,7 +287,7 @@ export class ServicesComponent implements OnInit, OnDestroy {
   toggleReadMore(card: any): void {
     if (!card.showMore) {
       // Navigate to details page when clicking 'Read More'
-      this.router.navigate(['/service-details', card.slug], {
+      this.router.navigate([`/${card.slug}`], {
         state: { card },
       });
     } else {

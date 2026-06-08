@@ -73,21 +73,11 @@ export const routes: Routes = [
     component: ProductDetailComponent,
     data: { type: 'product-details' }
   },
-  {
-    path: 'service-details/:slug',
-    component: DetailedPageComponent,
-    data: { type: 'service' }
-  },
-  // Optional: Redirect old blog URLs to new format
-  //{
-    //path: 'blogs/:slug',
-    //redirectTo: 'blog/:slug',
-    //pathMatch: 'full'
-  //},
-    /* 🔥 BLOG DETAIL WITHOUT /blog */
+  // Unified slug handling: services and blogs at root level
   {
     path: ':slug',
-    component: BlogDetailComponent,
+    component: DetailedPageComponent,
+    data: { type: 'service-or-blog' },
     pathMatch: 'full'
   },
   // Catch-all route (should be last)
@@ -95,5 +85,4 @@ export const routes: Routes = [
     path: '**',
     redirectTo: ''
   }
-  ,
 ];
