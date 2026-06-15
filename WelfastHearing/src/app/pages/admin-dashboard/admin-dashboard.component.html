@@ -76,6 +76,19 @@
       </div>
     </div>
 
+    <!-- Image Alt -->
+    <div class="mb-3">
+      <label class="form-label">Image Alt: <span class="text-danger">*</span></label>
+      <input
+        formControlName="img_alt"
+        class="form-control"
+        placeholder="Enter Image Alt"
+      />
+      <div *ngIf="submitted && f['img_alt'].invalid" class="text-danger">
+        Image Alt required
+      </div>
+    </div>
+
     <!-- URL -->
     <div class="mb-3">
       <label class="form-label">URL: <span class="text-danger">*</span></label>

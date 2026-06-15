@@ -62,7 +62,8 @@ export class AdminDashboardComponent {
       title: ['', Validators.required],
       metaKeyword: ['', Validators.required],
       metaDescription: ['', [Validators.required, Validators.maxLength(160)]],
-      url: ['', [Validators.required]]
+      url: ['', [Validators.required]],
+      img_alt: ['', [Validators.required]],
     });
   }
 
@@ -108,7 +109,8 @@ export class AdminDashboardComponent {
       title: item.title || '',
       metaKeyword: item.metaKeyword || '',
       metaDescription: item.metaDescription || '',
-      url: item.url
+      url: item.url,
+      img_alt: item.img_alt,
     });
 
     // Set image preview to show current image
@@ -283,10 +285,10 @@ export class AdminDashboardComponent {
     }
 
     // 🎯 SEO validation for ALL tabs (blogs, products, services)
-    if (!this.uploadForm.get('url')?.value || !this.uploadForm.get('title')?.value ||
+    if (!this.uploadForm.get('url')?.value || !this.uploadForm.get('img_alt')?.value || !this.uploadForm.get('title')?.value ||
         !this.uploadForm.get('metaKeyword')?.value ||
         !this.uploadForm.get('metaDescription')?.value) {
-      this.message = '❌ Please fill all SEO fields (Title, Keywords, Description)';
+      this.message = '❌ Please fill all SEO fields (Title, Keywords, Description, Url, Image Alt)';
       return;
     }
 
@@ -305,7 +307,8 @@ export class AdminDashboardComponent {
 
     formData.append('content', this.uploadForm.get('content')?.value);
     formData.append('heading', this.uploadForm.get('heading')?.value);
-    formData.append('url_', this.uploadForm.get('url')?.value);
+    formData.append('url_', this.convertWhitespaceToDash(this.uploadForm.get('url')?.value));
+    formData.append('img_alt', this.convertWhitespaceToDash(this.uploadForm.get('img_alt')?.value));
 
     // Add ID for edit mode
     if (this.isEditMode && this.editingItem) {
@@ -333,6 +336,9 @@ export class AdminDashboardComponent {
       else if (this.activeTab === 'Upload Products') submitCall = this.service.editProduct(formData);
       else submitCall = this.service.editService(formData);
     } else {
+      // formData.forEach((value, key) => {
+      //   console.log(`${key}:`, value);
+      // });
       // CREATE operations
       if (this.activeTab === 'Upload Blogs') submitCall = this.service.BlogUpload(formData);
       else if (this.activeTab === 'Upload Products') submitCall = this.service.uploadProducts(formData);
@@ -424,7 +430,8 @@ export class AdminDashboardComponent {
             title: item.meta_title || item.title || '',
             metaKeyword: item.meta_keyword || item.metaKeyword || '',
             metaDescription: item.meta_desc || item.meta_description || '',
-            url: item.url_ || item.heading || ''
+            url: item.url_ || item.heading || '',
+            img_alt: item.img_alt || ''
           }));
 
           //console.log('Mapped data:', this.mappeddata);
@@ -453,5 +460,9 @@ export class AdminDashboardComponent {
   getTypeLabel(typeValue: string): string {
     const type = this.productCategories.find(cat => cat.value === typeValue);
     return type ? type.label : typeValue;
+  }
+
+  convertWhitespaceToDash(value: string): string {
+    return value.replace(/\s+/g, '-');
   }
 }
